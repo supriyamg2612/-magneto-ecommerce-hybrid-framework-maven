@@ -1,6 +1,7 @@
 package com.supriya.magento.ecommerce.authentication.test;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -24,10 +25,16 @@ HomePage hp;
 
 		@Test
 		 public void verifySignInLinkNavigatesToSignInPage() {
-			hp.signInToApplication();
+			hp.signInToApplicationLink();
 			String actualTitle = driver.getTitle();
 			String expectedTitle = "Customer Login";
 			Assert.assertEquals(actualTitle, expectedTitle);
 		}
+		 @AfterClass
+		    public void tearDown() {
+		        if (driver != null) {
+		            driver.quit();
+		        }
 
+}
 }

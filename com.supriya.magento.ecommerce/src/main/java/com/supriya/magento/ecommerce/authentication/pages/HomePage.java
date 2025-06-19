@@ -59,7 +59,7 @@ public class HomePage {
 	
 	
 	
-	public SignInPage signInToApplication() {
+	public SignInPage signInToApplicationLink() {
 		handleCookieConsent("agree");
 		signInLink.click();
 		
