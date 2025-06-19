@@ -18,7 +18,7 @@ public class BaseTest {
 	public static ExtentTest test = null;
 
 	
-	public static WebDriver driver = null;
+	public static  WebDriver driver = null;
 	
 	public void initialization() throws Exception {
 		String browserName = PropertyUtility.readProperty("browser"); //reading browser name

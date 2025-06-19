@@ -10,7 +10,7 @@ public class PropertyUtility {
 	public static String readProperty(String key) throws Exception {
 		
 		Properties prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "src/main/resources/properties/config.properties"); 	
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/properties/config.properties");
 
 		prop.load(fis);
 		return prop.getProperty(key);
