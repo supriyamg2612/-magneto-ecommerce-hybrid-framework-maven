@@ -30,6 +30,15 @@ HomePage hp;
 			String expectedTitle = "Customer Login";
 			Assert.assertEquals(actualTitle, expectedTitle);
 		}
+		
+		@Test
+		public void verifycreateAccountLinkNavigatesToCreateAccountnPage() {
+			
+			hp.createAccountLink();
+			String actualTitle = driver.getTitle();
+			String expectedTitle = "Create New Customer Account";
+			Assert.assertEquals(actualTitle, expectedTitle);
+		}
 		 @AfterClass
 		    public void tearDown() {
 		        if (driver != null) {

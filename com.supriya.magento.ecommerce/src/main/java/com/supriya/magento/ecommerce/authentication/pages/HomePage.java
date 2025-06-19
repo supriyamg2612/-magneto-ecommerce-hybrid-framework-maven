@@ -66,4 +66,9 @@ public class HomePage {
 		return new SignInPage(driver);
 		//button[@id='disagree-btn']
 	}
+	public CreateAccountPage createAccountLink() {
+		handleCookieConsent("agree");
+		createAnAccountLink.click();
+		return new CreateAccountPage(driver);
+	}
 }
