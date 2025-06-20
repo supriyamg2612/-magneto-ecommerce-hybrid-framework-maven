@@ -24,6 +24,7 @@ public class DashboardPageTest extends BaseTest{
 		hp=new HomePage(driver);
 		sp=new SignInPage(driver);
 		reportInitialization();
+		this.wait = new WebDriverWait(driver, 10);
 		
 	}
 	

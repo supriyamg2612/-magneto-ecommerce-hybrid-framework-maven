@@ -23,13 +23,13 @@ public class CreateAccountPageTest extends BaseTest {
 		hp=new HomePage(driver);
 		cp= new CreateAccountPage(driver);
 		reportInitialization();
-		
+		this.wait = new WebDriverWait(driver, 10);
 	}
 	
 	@Test
 	public void verifyNewAccountCreation() {
 		hp.createAccountLink();
-		cp.createNewAccount("Alex", "Jones", "jones123@gmail.com", "Jones@123", "Jones@123");
+		cp.createNewAccount("Alice", "Jones", "jones12345@gmail.com", "Jones@12345", "Jones@12345");
 		wait.until(ExpectedConditions.titleIs("My Account"));
 		String actaulTitle= getPageTitle();
 		String expectedTitle= "My Account";

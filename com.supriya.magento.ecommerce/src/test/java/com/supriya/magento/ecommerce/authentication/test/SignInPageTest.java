@@ -21,6 +21,7 @@ public class SignInPageTest extends BaseTest{
 	public void configuration() throws Exception {
 		initialization();
 		hp=new HomePage(driver);
+		this.wait = new WebDriverWait(driver, 10);
 		
 		
 	reportInitialization();
