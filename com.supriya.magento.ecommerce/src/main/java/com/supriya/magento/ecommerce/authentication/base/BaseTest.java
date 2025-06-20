@@ -39,6 +39,10 @@ public class BaseTest {
 		driver.get(PropertyUtility.readProperty("url"));
 		}
 	
+	public String getPageTitle() {
+        return driver.getTitle();
+    }
+	
 	public void reportInitialization() {
 
 		report = new ExtentReports();

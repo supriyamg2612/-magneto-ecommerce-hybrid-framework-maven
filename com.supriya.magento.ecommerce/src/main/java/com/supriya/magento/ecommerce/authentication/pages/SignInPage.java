@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.supriya.magento.ecommerce.authentication.utilities.PropertyUtility;
+
 public class SignInPage {
 
 	WebDriver driver ;
@@ -35,9 +37,9 @@ public class SignInPage {
 		signInButton.click();
 	}
 	
-	public DashboardPage validLogin() {
-		emailField.sendKeys("celinaredden123@gmail.com");
-		passwordField.sendKeys("Celinaredden123");
+	public DashboardPage validLogin() throws Exception {
+		emailField.sendKeys(PropertyUtility.readProperty("email"));
+		passwordField.sendKeys(PropertyUtility.readProperty("password"));
 		signInButton.click();
 		return new DashboardPage(driver);
 	}

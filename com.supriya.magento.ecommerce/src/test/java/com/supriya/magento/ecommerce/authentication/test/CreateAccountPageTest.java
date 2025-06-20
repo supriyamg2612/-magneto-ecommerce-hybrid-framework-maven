@@ -1,5 +1,7 @@
 package com.supriya.magento.ecommerce.authentication.test;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -12,6 +14,7 @@ import com.supriya.magento.ecommerce.authentication.pages.HomePage;
 public class CreateAccountPageTest extends BaseTest {
 	CreateAccountPage cp;
 	HomePage hp;
+	WebDriverWait wait;
 	
 	
 	@BeforeClass
@@ -27,9 +30,10 @@ public class CreateAccountPageTest extends BaseTest {
 	public void verifyNewAccountCreation() {
 		hp.createAccountLink();
 		cp.createNewAccount("Alex", "Jones", "jones123@gmail.com", "Jones@123", "Jones@123");
-		String actaulTitle= driver.getTitle();
+		wait.until(ExpectedConditions.titleIs("My Account"));
+		String actaulTitle= getPageTitle();
 		String expectedTitle= "My Account";
-		Assert.assertEquals(actaulTitle, expectedTitle);
+		Assert.assertEquals(actaulTitle, expectedTitle, "Title did not match!");
 	}
 	
 	 @AfterClass

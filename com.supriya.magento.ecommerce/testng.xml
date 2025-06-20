@@ -9,6 +9,8 @@
       <class name="com.supriya.magento.ecommerce.authentication.test.HomePageTest"/>
       <class name="com.supriya.magento.ecommerce.authentication.test.SignInPageTest"/>
       <class name="com.supriya.magento.ecommerce.authentication.test.DashboardPageTest"/>
+      <class name="com.supriya.magento.ecommerce.authentication.test.CreateAccountPageTest"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

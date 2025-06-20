@@ -1,5 +1,7 @@
 package com.supriya.magento.ecommerce.authentication.test;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -14,6 +16,7 @@ public class DashboardPageTest extends BaseTest{
 	DashboardPage dp;
 	HomePage hp;
 	SignInPage sp;
+	WebDriverWait wait;
 	
 	@BeforeClass
 	public void configuration() throws Exception {
@@ -25,10 +28,13 @@ public class DashboardPageTest extends BaseTest{
 	}
 	
 	@Test
-	public void verfiyValidLoginNavigatesToDashboardPage() {
+	public void verfiyValidLoginNavigatesToDashboardPage() throws Exception {
 		hp.signInToApplicationLink();
 		dp=sp.validLogin();
-		Assert.assertEquals(driver.getTitle(), "Home Page");
+	    wait.until(ExpectedConditions.titleIs("Home Page"));
+	    String actualTitle = getPageTitle(); 
+	    String expectedTitle = "Home Page";
+	    Assert.assertEquals(actualTitle, expectedTitle, "Title did not match!");
 	}
 
 }

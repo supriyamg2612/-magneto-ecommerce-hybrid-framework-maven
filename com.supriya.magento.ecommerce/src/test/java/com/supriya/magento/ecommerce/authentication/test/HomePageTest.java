@@ -1,5 +1,7 @@
 package com.supriya.magento.ecommerce.authentication.test;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -13,6 +15,7 @@ public class HomePageTest extends BaseTest {
 	
 
 HomePage hp;
+WebDriverWait wait;
 
 
 @BeforeClass
@@ -20,26 +23,32 @@ HomePage hp;
 			initialization();
 			hp=new HomePage(driver);
 			reportInitialization();
+			this.wait = new WebDriverWait(driver, 10);
 			
 		}
 
 		@Test
 		 public void verifySignInLinkNavigatesToSignInPage() {
 			hp.signInToApplicationLink();
-			String actualTitle = driver.getTitle();
+			wait.until(ExpectedConditions.titleIs("Customer Login"));
+			String actualTitle = getPageTitle();
 			String expectedTitle = "Customer Login";
-			Assert.assertEquals(actualTitle, expectedTitle);
+		    Assert.assertEquals(actualTitle, expectedTitle, "Sign-in page title did not match!");
+
 		}
 		
 		@Test
-		public void verifycreateAccountLinkNavigatesToCreateAccountnPage() {
+		public void verifyCreateAccountLinkNavigatesToCreateAccountnPage() {
 			
 			hp.createAccountLink();
-			String actualTitle = driver.getTitle();
+			wait.until(ExpectedConditions.titleIs("Create New Customer Account"));
+			String actualTitle = getPageTitle();
 			String expectedTitle = "Create New Customer Account";
-			Assert.assertEquals(actualTitle, expectedTitle);
-		}
-		 @AfterClass
+			Assert.assertEquals(actualTitle, expectedTitle, "Create New Customer Account page title did not match!");	
+			}
+		
+		
+		@AfterClass
 		    public void tearDown() {
 		        if (driver != null) {
 		            driver.quit();
