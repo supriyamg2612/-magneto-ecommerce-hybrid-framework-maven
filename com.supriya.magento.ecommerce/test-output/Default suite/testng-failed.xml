@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.supriya.magento.ecommerce.authentication.test.CreateAccountPageTest">
+      <class name="com.supriya.magento.ecommerce.authentication.test.DashboardPageTest">
         <methods>
           <include name="configuration"/>
-          <include name="verifyNewAccountCreation"/>
+          <include name="verfiyValidLoginNavigatesToDashboardPage"/>
         </methods>
-      </class> <!-- com.supriya.magento.ecommerce.authentication.test.CreateAccountPageTest -->
+      </class> <!-- com.supriya.magento.ecommerce.authentication.test.DashboardPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
