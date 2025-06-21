@@ -11,11 +11,7 @@ import com.supriya.magento.ecommerce.authentication.utilities.PropertyUtility;
 
 public class BaseTest {
 	
-	public static ExtentReports report = null;
-
-	public static ExtentSparkReporter spark = null;
-
-	public static ExtentTest test = null;
+	
 
 	
 	public static  WebDriver driver = null;
@@ -35,6 +31,7 @@ public class BaseTest {
 
 		}
 		driver.manage().window().maximize();
+		 driver.manage().deleteAllCookies();
 
 		driver.get(PropertyUtility.readProperty("url"));
 		}
@@ -43,15 +40,7 @@ public class BaseTest {
         return driver.getTitle();
     }
 	
-	public void reportInitialization() {
-
-		report = new ExtentReports();
-
-		spark = new ExtentSparkReporter(System.getProperty("user.dir")+"/target/Extentreports.html");
-
-		report.attachReporter(spark);
-
-		}
+	
 
 		
 	

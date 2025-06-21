@@ -3,6 +3,7 @@ package com.supriya.magento.ecommerce.authentication.test;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
@@ -23,7 +24,7 @@ public class DashboardPageTest extends BaseTest{
 		initialization();
 		hp=new HomePage(driver);
 		sp=new SignInPage(driver);
-		reportInitialization();
+		
 		this.wait = new WebDriverWait(driver, 10);
 		
 	}
@@ -37,5 +38,12 @@ public class DashboardPageTest extends BaseTest{
 	    String expectedTitle = "Home Page";
 	    Assert.assertEquals(actualTitle, expectedTitle, "Title did not match!");
 	}
+	@AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+
+}
 
 }

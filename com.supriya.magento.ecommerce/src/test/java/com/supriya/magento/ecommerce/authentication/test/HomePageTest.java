@@ -20,9 +20,9 @@ WebDriverWait wait;
 
 @BeforeClass
 		public void configuration() throws Exception {
-			initialization();
+	initialization();
 			hp=new HomePage(driver);
-			reportInitialization();
+			
 			this.wait = new WebDriverWait(driver, 10);
 			
 		}

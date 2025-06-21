@@ -61,6 +61,7 @@ public class HomePage {
 	
 	public SignInPage signInToApplicationLink() {
 		handleCookieConsent("agree");
+		wait.until(ExpectedConditions.elementToBeClickable(signInLink));
 		signInLink.click();
 		
 		return new SignInPage(driver);
@@ -68,6 +69,7 @@ public class HomePage {
 	}
 	public CreateAccountPage createAccountLink() {
 		handleCookieConsent("agree");
+		wait.until(ExpectedConditions.elementToBeClickable(createAnAccountLink));
 		createAnAccountLink.click();
 		return new CreateAccountPage(driver);
 	}

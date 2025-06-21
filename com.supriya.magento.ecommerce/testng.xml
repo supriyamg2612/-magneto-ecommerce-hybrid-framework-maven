@@ -6,10 +6,11 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
+    <class name="com.supriya.magento.ecommerce.authentication.test.CreateAccountPageTest"/>
       <class name="com.supriya.magento.ecommerce.authentication.test.HomePageTest"/>
       <class name="com.supriya.magento.ecommerce.authentication.test.SignInPageTest"/>
       <class name="com.supriya.magento.ecommerce.authentication.test.DashboardPageTest"/>
-      <class name="com.supriya.magento.ecommerce.authentication.test.CreateAccountPageTest"/>
+      
       
     </classes>
   </test> <!-- Test -->
